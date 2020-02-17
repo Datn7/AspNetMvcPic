@@ -1,0 +1,37 @@
+﻿@model AspNetMvcPic.Models.ListItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ListItem</h4>
+    <hr />
+    <dl class="row">
+        <dt>
+            <img src="~/images/@Model.ProfilePicture"
+                 class="card"
+                 height="340" width="340"
+                 asp-append-version="true" />
+            @Model.Name
+        </dt>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProfilePicture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProfilePicture)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>

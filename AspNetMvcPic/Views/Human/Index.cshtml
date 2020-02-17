@@ -1,0 +1,14 @@
+﻿@model AspNetMvcPic.ViewModel.HumanViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Humans</h1>
+
+<div class="row">
+
+    @foreach (var human in Model.Humans)
+    {
+        <partial name="_HumanPartial" model="human" />
+    }
+</div>
